@@ -5,6 +5,7 @@ import {Warning} from '@material-ui/icons';
 import {setGlobalError} from './store/global-error/global-error.actions';
 import {Snackbar} from '@material-ui/core';
 
+import Map from './map'
 
 const AppComponent = params => {
 
@@ -24,6 +25,7 @@ const AppComponent = params => {
         open={Boolean(params.globalError)}
         message={message}
       />
+      {params.params.apiKey ? (<Map apiKey={params.params.apiKey}/>) : null}
 
     </>
   );
