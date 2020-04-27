@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+}
+
+.auto-wrapper {
+    position: relative;
+    font-size: 14px;
+    display: inline-block;
+    width: 100%;
+    padding-right: 30px;
+}
+
+.autocomplete-dropdown-container {
+    position: absolute;
+    top: 30px;
+    z-index: 2;
+    width: 100%;
+}
+
+.location-search-input {
+    width: -webkit-fill-available;
+    outline: none;
+    height: 30px;
+    font-size: 14px;
+    border: none;
+    border-bottom: 2px solid #039be5;
+    padding-right: 30px;
+}
+
+.close {
+    position: absolute;
+    right: 0;
+    top: 6px;
+    width: 24px;
+    height: 24px;
+    color: black;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #039be5;
+}
+
+.close:before, .close:after {
+    position: absolute;
+    left: 11px;
+    content: ' ';
+    height: 24px;
+    width: 1px;
+    background-color: black;
+}
+
+.close:before {
+    transform: rotate(45deg);
+}
+
+.close:after {
+    transform: rotate(-45deg);
+}
