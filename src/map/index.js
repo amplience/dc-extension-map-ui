@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import {connect} from 'react-redux';
 import {GoogleApiWrapper} from "google-maps-react";
 import MapRenderer from './renderer';
-import {Paper} from '@material-ui/core';
 import PlacesAutocomplete, {
   geocodeByAddress,
   getLatLng,
@@ -19,10 +18,8 @@ const MapComponent = ({
     lng: selectedPoint.lng
   });
 
-  console.log(position);
-
   return initialised ? (
-    <Paper style={{minHeight: '400px'}}>
+    <>
       <PlacesAutocomplete
         value={address}
         onChange={(address) => setAddress(address)}
@@ -85,13 +82,13 @@ const MapComponent = ({
         draggable={true}
         gestureHandling={'auto'}
         mapTypeControl={false}
-        scaleControl={true}
+        scaleControl={false}
         zoomControl={true}
-        streetViewControl={true}
+        streetViewControl={false}
         rotateControl={true}
         fullscreenControl={false}
       />
-    </Paper>) : null;
+    </>) : null;
 };
 
 export default GoogleApiWrapper(

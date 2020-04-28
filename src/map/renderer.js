@@ -240,6 +240,18 @@ const MapRenderer = (props) => {
       rotateControl={rotateControl}
       fullscreenControl={fullscreenControl}
       zoom={parseInt(mapZoom, 10)}
+      containerStyle={draggable ? {
+        width: '100%',
+        height: '100%',
+        position: 'relative',
+        minHeight: '400px'
+      }: {}}
+      style={{
+        width: '100%',
+        height: '100%',
+        position: 'relative',
+        minHeight: '400px'
+      }}
       center={{
         lat: lat,
         lng: lng
