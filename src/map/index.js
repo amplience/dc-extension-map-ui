@@ -50,7 +50,7 @@ const MapComponent = ({
                   ? 'suggestion-item--active'
                   : 'suggestion-item';
                 const style = suggestion.active
-                  ? {backgroundColor: '#fafafa', cursor: 'pointer'}
+                  ? {backgroundColor: '#efeef4', cursor: 'pointer'}
                   : {backgroundColor: '#ffffff', cursor: 'pointer'};
                 return (
                   <div

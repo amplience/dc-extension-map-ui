@@ -3,7 +3,6 @@ import {setGlobalError} from '../global-error/global-error.actions';
 import {setInitialised} from "../initialised/initialised.actions";
 import {setParams} from "../params/params.actions";
 import {getValues} from "../selectedPoint/selectedPoint.actions"
-
 export const SET_SDK = 'SET_SDK';
 
 export const setSDK = value => ({
@@ -14,11 +13,11 @@ export const setSDK = value => ({
 export const fetchSDK = () => async (dispatch, getState) => {
   let {SDK} = getState();
 
-  if (SDK) {
-    return SDK;
-  }
-
   try {
+    if (SDK) {
+      return SDK;
+    }
+
     SDK = window.extensionsSdkInstance ? await window.extensionsSdkInstance : await init();
 
     dispatch(setSDK(SDK));

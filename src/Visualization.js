@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-
 import {connect} from 'react-redux';
 import {Warning} from '@material-ui/icons';
 import {setGlobalError} from './store/global-error/global-error.actions';
@@ -40,7 +39,6 @@ const VisualizationComponent = params => {
         <Snackbar
           anchorOrigin={{vertical: 'top', horizontal: 'center'}}
           autoHideDuration={3000}
-          onClose={() => params.setGlobalError(null)}
           open={Boolean(params.globalError)}
           message={message}
         />

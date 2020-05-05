@@ -23,7 +23,17 @@ body {
     width: 100%;
 }
 
+.suggestion-item {
+    padding: 8px !important;
+}
+
+.suggestion-item--active {
+    padding: 8px !important;
+}
+
 .location-search-input {
+    width: 100%;
+    width: -moz-available;
     width: -webkit-fill-available;
     outline: none;
     height: 30px;
@@ -63,4 +73,28 @@ body {
 
 .close:after {
     transform: rotate(-45deg);
+}
+
+.gm-ui-hover-effect {
+    right: 0 !important;
+    top: 0 !important;
+    width: 40px !important;
+    height: 40px !important;
+}
+
+.gm-ui-hover-effect img {
+    height: 25px !important;
+    width: 25px !important;
+}
+
+.title {
+    font-size: 24px;
+}
+
+.description {
+    font-size: 16px;
+}
+
+.gm-style-cc {
+    display: none !important;
 }

@@ -21,7 +21,6 @@ const AppComponent = params => {
       <Snackbar
         anchorOrigin={{vertical: 'top', horizontal: 'center'}}
         autoHideDuration={3000}
-        onClose={() => params.setGlobalError(null)}
         open={Boolean(params.globalError)}
         message={message}
       />

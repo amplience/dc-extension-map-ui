@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {Provider} from 'react-redux';
+import {mockStore} from "./mockStore";
 
 const initalParams = {
   apiKey: ''
@@ -49,7 +50,6 @@ export const extension = ({params = initalParams, initalValue = []} = {}) => {
     const {store, rootReducer} = require('../store/store');
 
     return {rootReducer, store};
-
   };
 
 
@@ -63,7 +63,7 @@ export const mockExtension = ({params = initalParams, initalValue = []} = {}) =>
 
   const extension = {
     params: {
-      instance: {...initalParams, ...params}
+      instance: {...initalParams, ...params,}
     },
     form: {
       onReadOnlyChange
@@ -96,7 +96,7 @@ export const mockExtension = ({params = initalParams, initalValue = []} = {}) =>
     init: jest.fn(() => Promise.resolve(extension))
   }));
 
-  const {store, rootReducer} = require('../store/store');
+  const {rootReducer, store} = require('../store/store');
 
   return {extension, store, rootReducer}
 }

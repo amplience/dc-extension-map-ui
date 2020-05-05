@@ -260,7 +260,7 @@ const MapRenderer = (props) => {
         lat: lat,
         lng: lng
       }}
-      styles={theme === 'Dark' ? darkStyles : new google.maps.StyledMapType()}
+      styles={theme === 'Dark' ? darkStyles : [new google.maps.StyledMapType()]}
       onClick={() => {
         changeShow(false);
         setActiveMarker(null);
@@ -305,8 +305,8 @@ const MapRenderer = (props) => {
         }}
       >
         <div>
-          <h1>{locationName}</h1>
-          <p>{locationAddress}</p>
+          <h1 className="title">{locationName}</h1>
+          <p className="description">{locationAddress}</p>
         </div>
       </InfoWindow>) : null}
     </Map>

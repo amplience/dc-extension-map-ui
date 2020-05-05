@@ -1,5 +1,8 @@
-import { extension as mockExtension } from '../../../utils/mockExtension.js';
-import { mockStore } from '../../../utils/mockStore.js';
+import {extension as mockExtension} from '../../../utils/mockExtension.js';
+import {mockStore} from '../../../utils/mockStore.js';
+import {SET_GLOBAL_ERROR} from "../../global-error/global-error.actions";
+import {SET_INITIALISED} from "../../initialised/initialised.actions";
+
 
 describe('sdk actions', () => {
   let actions;
@@ -23,16 +26,37 @@ describe('sdk actions', () => {
 
     const dispatched = store.getActions();
 
-    expect(dispatched).toEqual([{ type: 'SET_SDK', value: {} }]);
+    expect(dispatched).toEqual([{type: 'SET_SDK', value: {}}]);
   });
 
   it('fetchSDK already defined', async () => {
-    const mocked = mockStore({ SDK: {} });
+    const mocked = mockStore({SDK: {}});
 
     await mocked.dispatch(actions.fetchSDK());
 
     const dispatched = mocked.getActions();
 
     expect(dispatched).toEqual([]);
+  });
+
+  it('SDK failed to load', async () => {
+    const spy = jest.spyOn(global.console, 'error').mockImplementation();
+
+    window.extensionsSdkInstance = new Promise((resolve, reject) => {
+      return reject();
+    });
+
+    const mocked = mockStore({});
+
+    await mocked.dispatch(actions.fetchSDK());
+
+    const dispatched = mocked.getActions();
+
+    expect(dispatched).toEqual([
+      {type: SET_INITIALISED, value: true},
+      {type: SET_GLOBAL_ERROR, value: 'Could not get SDK'},
+    ]);
+    spy.mockRestore();
+    window.extensionsSdkInstance = null;
   });
 });

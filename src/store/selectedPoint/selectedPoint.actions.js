@@ -11,13 +11,12 @@ export const setSelectedItems = value => ({
 
 export const setValue = value => async (dispatch, getState) => {
   const {SDK} = getState();
+
   try {
     await SDK.field.setValue(value);
   } catch (e) {
-    const error = e[0].data.keyword;
-    if (!error) {
-      dispatch(setGlobalError('Could not set value'));
-    }
+    const error = e && e.length && e[0].data && e[0].data.keyword;
+    dispatch(setGlobalError(error || 'Could not set value'));
   }
 };
 
@@ -25,15 +24,15 @@ export const getValues = () => async (dispatch, getState) => {
   const state = getState();
   const {SDK, params} = state;
 
-  if (!params.apiKey) {
-    dispatch(setInitialised(true));
-
-    return dispatch(setGlobalError('Google api key is required'));
-  }
-
-  dispatch(setFetching(true));
-
   try {
+    if (!params.apiKey) {
+      dispatch(setInitialised(true));
+
+      return dispatch(setGlobalError('Google api key is required'));
+    }
+
+    dispatch(setFetching(true));
+
     const value = await SDK.field.getValue();
 
     dispatch(setSelectedItems(value));

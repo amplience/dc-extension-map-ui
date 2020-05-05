@@ -12,6 +12,12 @@ describe('params reducer', () => {
         },
         expected: Object.assign(params, { apiKey: '11111' })
       },
+      {
+        action: {
+          type: SET_PARAMS
+        },
+        expected: params
+      },
       { action: { type: '', value: {} }, expected: params }
     ]);
   });
