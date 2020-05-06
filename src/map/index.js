@@ -10,7 +10,8 @@ import PlacesAutocomplete, {
 const MapComponent = ({
                         initialised,
                         apiKey,
-                        selectedPoint
+                        selectedPoint,
+                        params
                       }) => {
   const [address, setAddress] = useState('');
   const [position, setPosition] = useState({
@@ -40,7 +41,7 @@ const MapComponent = ({
           return (<div className="auto-wrapper">
             <input
               {...getInputProps({
-                placeholder: 'Search Places ...',
+                placeholder: params.searchPlaceholderText || 'Search Places ...',
                 className: 'location-search-input',
               })}
             />
@@ -76,6 +77,7 @@ const MapComponent = ({
       }
       }/>
       <MapRenderer
+        theme={params.theme.toLowerCase() === 'light' ? 'Light' : 'Dark'}
         location={position}
         apiKey={apiKey}
         mapZoom={"17"}
@@ -99,6 +101,7 @@ export default GoogleApiWrapper(
   state => ({
     selectedPoint: state.selectedPoint,
     SDK: state.SDK,
-    initialised: state.initialised
+    initialised: state.initialised,
+    params: state.params
   })
 )(MapComponent))

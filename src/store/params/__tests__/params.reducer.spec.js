@@ -8,9 +8,9 @@ describe('params reducer', () => {
       {
         action: {
           type: SET_PARAMS,
-          value: { instance: { apiKey: '11111' }, installation: {} }
+          value: { instance: { apiKey: '11111', theme: "Light", searchPlaceholderText: "Search" }, installation: {} }
         },
-        expected: Object.assign(params, { apiKey: '11111' })
+        expected: Object.assign(params, { apiKey: '11111', theme: "Light", searchPlaceholderText: "Search" })
       },
       {
         action: {

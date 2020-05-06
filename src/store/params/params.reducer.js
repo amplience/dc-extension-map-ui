@@ -1,7 +1,9 @@
 import {SET_PARAMS} from "./params.actions";
 
 export const params = {
-  "apiKey": ""
+  "apiKey": "",
+  "theme": "Dark",
+  "searchPlaceholderText": "Search Places ..."
 };
 
 export function paramReducer(state = params, {type, value}) {
