@@ -18,7 +18,9 @@ Location latitude and longitude are added to the content as object.
 
 ## Google maps API key
 
-Follow [instructions](https://developers.google.com/maps/documentation/javascript/get-api-key) to get your own Google maps API key.
+Follow [instructions](https://developers.google.com/maps/documentation/javascript/get-api-key) to get your own Google maps API key.  
+Required APIs are - Geocoding API, Maps JavaScript API, Places API.
+                    
 
 ### Example Snippet
 
@@ -134,7 +136,7 @@ Follow [instructions](https://developers.google.com/maps/documentation/javascrip
 }
 ```
 
-You can use extended snippet to have ability customize controls, theme, marker info window text in content item.<br/>
+You can use extended snippet to have ability customize controls, theme, marker info window text in content item.  
 By using standard snippet all controls are disabled, no info window on click on marker.
 
 ## Visualization
@@ -145,7 +147,7 @@ Visualization can be set using next link:
 
 ![Visualization](screenshot_vis.png)
 
-Don't forget to replace {{apiKey}} with your Google maps API key.<br/>
+Don't forget to replace {{apiKey}} with your Google maps API key.  
 You can always create your own visualization, designed according your website.
 
 ## Available Scripts
@@ -154,23 +156,23 @@ In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.<br />
+Runs the app in the development mode.  
 Open [https://localhost:3000](https://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
+The page will reload if you make edits.  
 You will also see any lint errors in the console.
 
 ### `npm test`
 
-Launches the test runner.<br />
+Launches the test runner.  
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
+Builds the app for production to the `build` folder.  
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-By default, Create React App produces a build assuming your app is hosted at the server root.<br />
+The build is minified and the filenames include the hashes.  
+By default, Create React App produces a build assuming your app is hosted at the server root.  
 To override this, specify the homepage in your `package.json`, for example:
  
  `"homepage": "."`
