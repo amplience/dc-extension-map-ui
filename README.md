@@ -5,6 +5,8 @@
 The map ui extension allows content authors easily search and select location on the Google maps and add it to content.
 Location latitude and longitude are added to the content as object.
 
+![Map ui extension](screenshot.png)
+
 ## Installation Parameters
 
 | Paramerter  |  Default  | Notes   | Required |
@@ -140,6 +142,8 @@ By using standard snippet all controls are disabled, no info window on click on 
 Visualization can be set using next link: 
 
 `https://amplience.github.io/map-ui-extension/index.html?vse={{vse.domain}}&content={{content.sys.id}}&apiKey={{apiKey}}`
+
+![Visualization](screenshot_vis.png)
 
 Don't forget to replace {{apiKey}} with your Google maps API key.<br/>
 You can always create your own visualization, designed according your website.
