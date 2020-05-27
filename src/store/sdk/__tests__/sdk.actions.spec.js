@@ -38,25 +38,4 @@ describe('sdk actions', () => {
 
     expect(dispatched).toEqual([]);
   });
-
-  it('SDK failed to load', async () => {
-    const spy = jest.spyOn(global.console, 'error').mockImplementation();
-
-    window.extensionsSdkInstance = new Promise((resolve, reject) => {
-      return reject();
-    });
-
-    const mocked = mockStore({});
-
-    await mocked.dispatch(actions.fetchSDK());
-
-    const dispatched = mocked.getActions();
-
-    expect(dispatched).toEqual([
-      {type: SET_INITIALISED, value: true},
-      {type: SET_GLOBAL_ERROR, value: 'Could not get SDK'},
-    ]);
-    spy.mockRestore();
-    window.extensionsSdkInstance = null;
-  });
 });

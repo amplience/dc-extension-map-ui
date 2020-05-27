@@ -18,7 +18,7 @@ export const fetchSDK = () => async (dispatch, getState) => {
       return SDK;
     }
 
-    SDK = window.extensionsSdkInstance ? await window.extensionsSdkInstance : await init();
+    SDK = await init();
 
     dispatch(setSDK(SDK));
 

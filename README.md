@@ -1,6 +1,6 @@
 [![Amplience Dynamic Content](header.png)](https://amplience.com/dynamic-content)
 
-# map-ui-extension
+# dc-extension-map-ui
 
 The map ui extension allows content authors easily search and select location on the Google maps and add it to content.
 Location latitude and longitude are added to the content as object.
@@ -42,7 +42,7 @@ Required APIs are - Geocoding API, Maps JavaScript API, Places API.
       }
     },
     "ui:extension": {
-      "url": "https://amplience.github.io/map-ui-extension/index.html",
+      "url": "https://amplience.github.io/dc-extension-map-ui/index.html",
       "params": {
         "apiKey": "{{apiKey}}",
         "theme": "Light",
@@ -73,7 +73,7 @@ Required APIs are - Geocoding API, Maps JavaScript API, Places API.
       }
     },
     "ui:extension": {
-      "url": "https://amplience.github.io/map-ui-extension/index.html",
+      "url": "https://amplience.github.io/dc-extension-map-ui/index.html",
       "params": {
         "apiKey": "{{apiKey}}"
       }
@@ -143,7 +143,7 @@ By using standard snippet all controls are disabled, no info window on click on 
 
 Visualization can be set using next link: 
 
-`https://amplience.github.io/map-ui-extension/index.html?vse={{vse.domain}}&content={{content.sys.id}}&apiKey={{apiKey}}`
+`https://amplience.github.io/mdc-extension-map-ui/index.html?vse={{vse.domain}}&content={{content.sys.id}}&apiKey={{apiKey}}`
 
 ![Visualization](screenshot_vis.png)
 
@@ -181,7 +181,7 @@ Your app is ready to be deployed!
 
 ## Development and QA with GitHub Pages
 
-You can easily try out this UI extension by adding it to your repository with the above snippet, and using the build found at https://amplience.github.io/map-ui-extension/index.html as the url.
+You can easily try out this UI extension by adding it to your repository with the above snippet, and using the build found at https://amplience.github.io/dc-extension-map-ui/index.html as the url.
 
 If you've set up your own fork, you can host your own changes on it with gh-pages to make development, experimentation and QA easier.
 
