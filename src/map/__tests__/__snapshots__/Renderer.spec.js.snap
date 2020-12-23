@@ -1,11 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`extension check snapshot 1`] = `
-<div>
-  Loading...
-</div>
-`;
-
 exports[`renderer check snapshot 1`] = `
 <div>
   Loading...

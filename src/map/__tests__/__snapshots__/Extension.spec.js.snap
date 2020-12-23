@@ -5,9 +5,3 @@ exports[`extension check snapshot 1`] = `
   Loading...
 </div>
 `;
-
-exports[`extension check snapshot loaded 1`] = `
-<div>
-  Loading...
-</div>
-`;
