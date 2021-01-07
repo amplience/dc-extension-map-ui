@@ -1,13 +1,42 @@
-[![Amplience Dynamic Content](header.png)](https://amplience.com/dynamic-content)
+[![Amplience Dynamic Content](media/header.png)](https://amplience.com/dynamic-content)
 
 # dc-extension-map-ui
 
 The map ui extension allows content authors easily search and select location on the Google maps and add it to content.
 Location latitude and longitude are added to the content as object.
 
-![Map ui extension](screenshot.png)
+![Map ui extension](media/screenshot.png)
 
-## Installation Parameters
+## How to install
+
+### Register Extension
+
+This extension needs to be [registered](https://amplience.com/docs/development/registeringextensions.html) against a Hub with in the Dynamic Content application (Developer -> Extensions), for it to load within that Hub.
+
+![Setup](media/setup.png)
+
+* Category: Content Field
+* Label: Google Map
+* Name: google-map _(needs to be unique with the Hub)_
+* URL: [https://dc-extension-map-ui.amplience.net](https://dc-extension-map-ui.amplience.net)
+* Description: Google maps extension  _(can be left blank, if you wish)_
+* Initial height: 500
+
+Note:
+You can use our deployed version of this extension (builds from the "production" branch) -
+
+[https://dc-extension-map-ui.amplience.net](https://dc-extension-map-ui.amplience.net)
+
+_As this is an open source project you're welcome to host your own "fork" of this project. You can use any standard static hosting service (Netlify, Amplify, Vercel, etc.) if you wish._
+
+### Permissions
+
+![Permissions](media/permissions.png)
+
+Sandbox permissions:
+- Allow same origin
+
+### Installation Parameters
 
 | Paramerter  |  Default  | Notes   | Required |
 |---|---|---|---|
@@ -15,14 +44,7 @@ Location latitude and longitude are added to the content as object.
 | theme | Dark | Google maps styling theme, put Light to set standard light theme. | false
 | searchPlaceholderText | Search Places ... | Placeholder text to show in the search box. | false
 
-
-## Google maps API key
-
-Follow [instructions](https://developers.google.com/maps/documentation/javascript/get-api-key) to get your own Google maps API key.  
-Required APIs are - Geocoding API, Maps JavaScript API, Places API.
-                    
-
-### Example Snippet
+### Assign the extension to schema
 
 ```json
 
@@ -42,7 +64,7 @@ Required APIs are - Geocoding API, Maps JavaScript API, Places API.
       }
     },
     "ui:extension": {
-      "url": "https://amplience.github.io/dc-extension-map-ui/index.html",
+      "url": "https://dc-extension-map-ui.amplience.net",
       "params": {
         "apiKey": "{{apiKey}}",
         "theme": "Light",
@@ -73,7 +95,7 @@ Required APIs are - Geocoding API, Maps JavaScript API, Places API.
       }
     },
     "ui:extension": {
-      "url": "https://amplience.github.io/dc-extension-map-ui/index.html",
+      "url": "https://dc-extension-map-ui.amplience.net",
       "params": {
         "apiKey": "{{apiKey}}"
       }
@@ -139,13 +161,18 @@ Required APIs are - Geocoding API, Maps JavaScript API, Places API.
 You can use extended snippet to have ability customize controls, theme, marker info window text in content item.  
 By using standard snippet all controls are disabled, no info window on click on marker.
 
+## Google maps API key
+
+Follow [instructions](https://developers.google.com/maps/documentation/javascript/get-api-key) to get your own Google maps API key.  
+Required APIs are - Geocoding API, Maps JavaScript API, Places API.
+
 ## Visualization
 
 Visualization can be set using next link: 
 
-`https://amplience.github.io/mdc-extension-map-ui/index.html?vse={{vse.domain}}&content={{content.sys.id}}&apiKey={{apiKey}}`
+`https://dc-extension-map-ui.amplience.net?vse={{vse.domain}}&content={{content.sys.id}}&apiKey={{apiKey}}`
 
-![Visualization](screenshot_vis.png)
+![Visualization](media/screenshot_vis.png)
 
 Don't forget to replace {{apiKey}} with your Google maps API key.  
 You can always create your own visualization, designed according your website.
@@ -178,13 +205,3 @@ To override this, specify the homepage in your `package.json`, for example:
  `"homepage": "."`
 
 Your app is ready to be deployed!
-
-## Development and QA with GitHub Pages
-
-You can easily try out this UI extension by adding it to your repository with the above snippet, and using the build found at https://amplience.github.io/dc-extension-map-ui/index.html as the url.
-
-If you've set up your own fork, you can host your own changes on it with gh-pages to make development, experimentation and QA easier.
-
-Build and publish to the `gh-pages` branch using `npm run publish`. If you are using remotes, you can target one with `--remote <name>`. See `gh-pages --help` for more options.
-
-Push the `gh-pages` branch to your fork, and then enable github pages on the repository, and you should be all set.
