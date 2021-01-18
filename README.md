@@ -18,14 +18,14 @@ This extension needs to be [registered](https://amplience.com/docs/development/r
 * Category: Content Field
 * Label: Google Map
 * Name: google-map _(needs to be unique with the Hub)_
-* URL: [https://dc-extension-map-ui.amplience.net](https://dc-extension-map-ui.amplience.net)
+* URL: [https://map-ui.extensions.content.amplience.net](https://map-ui.extensions.content.amplience.net)
 * Description: Google maps extension  _(can be left blank, if you wish)_
 * Initial height: 500
 
 Note:
 You can use our deployed version of this extension (builds from the "production" branch) -
 
-[https://dc-extension-map-ui.amplience.net](https://dc-extension-map-ui.amplience.net)
+[https://map-ui.extensions.content.amplience.net](https://map-ui.extensions.content.amplience.net)
 
 _As this is an open source project you're welcome to host your own "fork" of this project. You can use any standard static hosting service (Netlify, Amplify, Vercel, etc.) if you wish._
 
@@ -64,7 +64,7 @@ Sandbox permissions:
       }
     },
     "ui:extension": {
-      "url": "https://dc-extension-map-ui.amplience.net",
+      "url": "https://map-ui.extensions.content.amplience.net",
       "params": {
         "apiKey": "{{apiKey}}",
         "theme": "Light",
@@ -95,7 +95,7 @@ Sandbox permissions:
       }
     },
     "ui:extension": {
-      "url": "https://dc-extension-map-ui.amplience.net",
+      "url": "https://map-ui.extensions.content.amplience.net",
       "params": {
         "apiKey": "{{apiKey}}"
       }
@@ -170,7 +170,7 @@ Required APIs are - Geocoding API, Maps JavaScript API, Places API.
 
 Visualization can be set using next link: 
 
-`https://dc-extension-map-ui.amplience.net?vse={{vse.domain}}&content={{content.sys.id}}&apiKey={{apiKey}}`
+`https://map-ui.extensions.content.amplience.net?vse={{vse.domain}}&content={{content.sys.id}}&apiKey={{apiKey}}`
 
 ![Visualization](media/screenshot_vis.png)
 
