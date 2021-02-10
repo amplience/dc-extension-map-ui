@@ -6,7 +6,6 @@ frontend:
         - nvm install 14
         - nvm use 14
         - npm ci
-        - npm test -- --silent
     build:
       commands:
         - npm run build
