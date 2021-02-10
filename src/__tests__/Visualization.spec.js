@@ -107,17 +107,17 @@ it('should fail fetch data', async () => {
   });
 
   try {
-    mount(
-      <Render>
-        <Visualization
-          {...store.getState()}
-          vse={"8mr8kf9sz3sd1j0vleorud5ub.staging.bigcontent.io"}
-          content={"9fba787f-9b89-435e-806f-6f0d6d9057ae"}
-        />
-      </Render>
-    );
-
     act(() => {
+      mount(
+        <Render>
+          <Visualization
+            {...store.getState()}
+            vse={"8mr8kf9sz3sd1j0vleorud5ub.staging.bigcontent.io"}
+            content={"9fba787f-9b89-435e-806f-6f0d6d9057ae"}
+          />
+        </Render>
+      );
+
       jest.runAllImmediates()
     })
   } catch (error) {
