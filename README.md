@@ -7,6 +7,8 @@ Location latitude and longitude are added to the content as object.
 
 ![Map ui extension](media/screenshot.png)
 
+This project requires Node 16.x to build.
+
 ## How to install
 
 ### Register Extension
