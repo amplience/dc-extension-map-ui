@@ -1,4 +1,4 @@
-[![Amplience Dynamic Content](media/header.png)](https://amplience.com/dynamic-content)
+
 
 # dc-extension-map-ui
 
